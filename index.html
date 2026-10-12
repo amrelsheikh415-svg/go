@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>وصّلني: طلب الأكل لحد بابك</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap">
+<style>
+:root{--bg:#F5F7F6;--card:#fff;--ink:#12252A;--mut:#64767B;--line:#E1E8E7;--g:#0B7A63;--g2:#095F4E;--o:#F26B3A;--soft:#E6F4F0;--sh:0 1px 2px rgba(18,37,42,.06),0 6px 20px rgba(18,37,42,.06);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1B1F;--card:#15282D;--ink:#EAF3F2;--mut:#9BB2B4;--line:#27434A;--g:#3FC2A5;--g2:#2EA88D;--o:#FF8556;--soft:#173A37;--sh:none}}
+:root[data-theme="dark"]{--bg:#0D1B1F;--card:#15282D;--ink:#EAF3F2;--mut:#9BB2B4;--line:#27434A;--g:#3FC2A5;--g2:#2EA88D;--o:#FF8556;--soft:#173A37;--sh:none}
+*,*:before,*:after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 "IBM Plex Sans Arabic",Tahoma,sans-serif}
+h1,h2,h3,h4{font-family:Cairo,Tahoma,sans-serif;margin:0;line-height:1.4}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--o);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;background:var(--card);border-bottom:1px solid var(--line)}
+.bar{max-width:1040px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font:800 22px Cairo;color:var(--g);margin-inline-end:auto}
+.loc{background:var(--soft);color:var(--g);border-radius:999px;padding:2px 12px;font-size:14px}
+.tabs{display:flex;gap:2px;background:var(--bg);padding:3px;border-radius:999px}
+.tabs button{border:0;background:none;padding:3px 14px;border-radius:999px;font-size:15px}
+.tabs button[aria-selected=true]{background:var(--g);color:#fff}
+main{max-width:1040px;margin:0 auto;padding:18px 16px 100px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--sh)}
+.meta{color:var(--mut);font-size:14px}
+.btn{background:var(--g);color:#fff;border:0;border-radius:12px;padding:9px 18px;font-weight:500}
+.btn:hover{background:var(--g2)}
+.btn.o{background:var(--o);color:#fff}.btn.l{background:none;color:var(--ink);border:1px solid var(--line)}
+.btn.w{width:100%;padding:12px}
+.btn[disabled]{opacity:.45}
+.hero{background:linear-gradient(135deg,#0B7A63,#0E9E7F 60%,#F2A33A);color:#fff;border-radius:20px;padding:28px 22px;margin-bottom:18px}
+.hero h1{font-size:clamp(24px,5vw,36px);font-weight:800}
+.hero p{margin:4px 0 14px;opacity:.92}
+.search{width:100%;max-width:460px;border:0;border-radius:12px;padding:12px 16px;font:inherit;background:#fff;color:#12252A}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 14px}
+.chips button{white-space:nowrap;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:3px 16px}
+.chips button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.rest{padding:0;overflow:hidden;text-align:start;display:block;width:100%;transition:transform .15s}
+.rest:hover{transform:translateY(-3px)}
+.ban{height:110px;display:grid;place-items:center;font-size:48px;position:relative}
+.ban .pr{position:absolute;top:10px;inset-inline-start:10px;background:var(--o);color:#fff;font-size:12px;border-radius:8px;padding:0 8px}
+.rest .in{padding:12px 14px}
+.rate{color:#B7791F;font-weight:500}
+.split{display:grid;gap:18px}
+@media(min-width:900px){.split{grid-template-columns:1fr 330px;align-items:start}aside{position:sticky;top:76px}.cartbar{display:none!important}}
+@media(max-width:899px){aside{display:none}}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:12px}
+.it{display:flex;gap:12px;align-items:center;padding:12px}
+.it .e{font-size:34px;background:var(--soft);border-radius:12px;width:60px;height:60px;display:grid;place-items:center;flex:none}
+.it>div:nth-child(2){flex:1}
+.it p{margin:0;color:var(--mut);font-size:13px;line-height:1.5}
+.q{display:flex;align-items:center;gap:6px}
+.q button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--card);line-height:1}
+.q .add{background:var(--g);color:#fff;border:0}
+.row{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.row.t{font-weight:800;border-top:1px dashed var(--line);margin-top:6px;padding-top:8px}
+.cartbar{position:fixed;inset-inline:0;bottom:0;z-index:9;background:var(--card);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
+.cartbar>div{max-width:1040px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+input[type=text],select{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);margin:4px 0 12px}
+.pay{display:flex;gap:10px;margin:6px 0 4px}.pay label{flex:1;border:1px solid var(--line);border-radius:12px;padding:8px 12px;display:flex;gap:8px;align-items:center}
+.map{position:relative;height:190px;border-radius:14px;background:var(--soft);overflow:hidden;margin-bottom:14px}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;font-size:26px;transform:translate(50%,-50%)}
+.sc{position:absolute;font-size:30px;transform:translate(50%,-50%);transition:left 3.5s linear,top 3.5s linear}
+.trk{display:flex;gap:6px;margin:12px 0}
+.trk div{flex:1;font-size:13px;color:var(--mut);text-align:center}
+.trk i{display:block;height:6px;border-radius:3px;background:var(--line);margin-bottom:6px;transition:background .4s}
+.trk .d{color:var(--ink);font-weight:500}.trk .d i{background:var(--g)}
+.kan{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:14px}
+.col h3{font-size:17px;margin-bottom:8px;display:flex;justify-content:space-between}
+.col .card{margin-bottom:10px;padding:12px}
+.badge{background:var(--soft);color:var(--g);border-radius:999px;padding:0 10px;font-size:13px}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:14px 0}
+.kpi strong{display:block;font:800 26px Cairo}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:start;padding:8px 6px;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-weight:500}
+.bars{display:grid;gap:8px}
+.bars div{display:grid;grid-template-columns:110px 1fr 70px;gap:8px;align-items:center;font-size:14px}
+.bars i{display:block;height:14px;border-radius:7px;background:var(--g)}
+.empty{color:var(--mut);text-align:center;padding:24px 0}
+.ok{color:var(--g);font-weight:500}
+.ap{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.cap{position:fixed;inset-inline:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));margin:auto;max-width:640px;background:rgba(18,37,42,.92);color:#fff;font:600 18px/1.5 Cairo,sans-serif;text-align:center;padding:12px 20px;border-radius:14px;z-index:20}
+@media(max-width:899px){.ap,.cap{bottom:calc(78px + env(safe-area-inset-bottom,0px))}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+ <span class="logo">🛵 وصّلني</span><span class="loc">📍 الدقي، الجيزة</span>
+ <div class="tabs" role="tablist" id="tabs">
+  <button role="tab" data-v="c">العميل</button><button role="tab" data-v="r">المطعم</button><button role="tab" data-v="a">الأدمن</button>
+ </div>
+</div></header>
+<main id="app"></main>
+<div class="cartbar" id="cb" hidden><div></div></div>
+<button class="btn o ap" id="play">▶ تشغيل العرض التلقائي</button>
+<div class="cap" id="cap" hidden></div>
+
+<script>
+const R=[
+{id:1,n:'كشري التحرير',e:'🍲',c:'مصري',r:4.7,t:25,fee:15,bg:'#FDE7C8',pr:'خصم 10%',m:[['كشري وسط','طبق كشري بالصلصة والدقة والشطة',45,'🍛'],['كشري كبير','حصة كبيرة تكفي شخصين',65,'🍲'],['طاجن أرز بلبن','في الفرن بالمكسرات',30,'🍮'],['مياه معدنية','زجاجة 600 مل',8,'💧']]},
+{id:2,n:'برجر هاوس',e:'🍔',c:'برجر',r:4.5,t:35,fee:20,bg:'#FAD9CF',pr:'',m:[['كلاسيك برجر','لحم بقري وجبنة وخضار',110,'🍔'],['تشيز برجر دبل','قطعتين لحم وجبنة شيدر',150,'🧀'],['بطاطس مقرمشة','حصة كبيرة بصوص خاص',40,'🍟'],['كولا','علبة 330 مل',20,'🥤']]},
+{id:3,n:'بيتزا نابولي',e:'🍕',c:'إيطالي',r:4.8,t:40,fee:25,bg:'#F9E0D9',pr:'توصيل مجاني فوق 150 ج',m:[['مارجريتا','موتزاريلا وطماطم وريحان',95,'🍕'],['بيبروني','بيبروني حار وجبنة مضاعفة',130,'🌶️'],['بيتزا خضار','فلفل ومشروم وزيتون',110,'🫑'],['تيراميسو','حلى إيطالي بالقهوة',55,'🍰']]},
+{id:4,n:'شاورما الشام',e:'🌯',c:'شرقي',r:4.4,t:30,fee:15,bg:'#E9E3C9',pr:'',m:[['ساندوتش فراخ','ثومية وبطاطس ومخلل',60,'🌯'],['ساندوتش لحم','لحمة متبلة على الفحم',80,'🥙'],['طبق مشكل','فراخ ولحم مع أرز وسلطة',140,'🍽️'],['عصير ليمون','نعناع طازج',25,'🍋']]},
+{id:5,n:'سوشي تايم',e:'🍣',c:'آسيوي',r:4.6,t:45,fee:30,bg:'#DCE9F2',pr:'',m:[['كاليفورنيا رول','8 قطع كابوريا وأفوكادو',160,'🍣'],['سالمون نيجيري','4 قطع سالمون طازج',190,'🐟'],['شوربة ميزو','شوربة يابانية دافئة',50,'🍜'],['شاي أخضر','ساخن أو بارد',30,'🍵']]},
+{id:6,n:'حلويات النيل',e:'🧁',c:'حلويات',r:4.9,t:30,fee:15,bg:'#F3DDEB',pr:'جديد',m:[['كنافة بالقشطة','سخنة وبالسمنة البلدي',70,'🥮'],['أم علي','بالمكسرات والزبيب',55,'🥣'],['بسبوسة','مع قشطة',40,'🍰'],['قهوة تركي','مظبوط أو سادة',35,'☕']]}
+];
+const ST=['تم الاستلام','بيتحضّر','في الطريق','وصل'],COM=.15,CATS=['الكل',...new Set(R.map(r=>r.c))];
+const nm=['أحمد','سارة','محمد','منى','يوسف','هبة'];
+let S={v:'c',rest:null,cart:{},co:false,cat:'الكل',q:'',orders:[],seq:1000,last:null,promo:0,pay:'cash',rv:1,f:{nm:'أحمد',ad:'12 شارع التحرير، الدقي',ph:'01012345678'}};
+for(let i=0;i<30;i++){const r=R[i%6],sub=70+(i*37)%230;S.orders.push({id:++S.seq,r:r.id,sub,fee:r.fee,disc:0,total:sub+r.fee,s:3,name:nm[i%6],addr:'القاهرة',lines:['طلب سابق'],t:0,old:1})}
+const $=s=>document.querySelector(s),n=v=>Math.round(v).toLocaleString('ar-EG'),egp=v=>n(v)+' ج',rest=id=>R.find(r=>r.id===id);
+const sub=()=>Object.entries(S.cart).reduce((s,[k,q])=>s+q*rest(S.rest).m[k][2],0),cnt=()=>Object.values(S.cart).reduce((a,b)=>a+b,0);
+const fee=()=>{const r=rest(S.rest);return r.id===3&&sub()>=150?0:r.fee};
+const disc=()=>S.promo?Math.min(50,sub()*.2):0;
+
+function grid(){
+ const l=R.filter(r=>(S.cat==='الكل'||r.c===S.cat)&&(r.n+r.c).includes(S.q.trim()));
+ return l.length?l.map(r=>`<button class="card rest" data-rest="${r.id}"><div class="ban" style="background:${r.bg}">${r.pr?`<span class="pr">${r.pr}</span>`:''}${r.e}</div><div class="in"><div class="row"><h3>${r.n}</h3><span class="rate">★ ${n(r.r)}</span></div><div class="meta">${r.c} · ${n(r.t)} دقيقة · توصيل ${egp(r.fee)}</div></div></button>`).join(''):'<div class="empty">مفيش مطعم بالاسم ده. جرّب كلمة تانية.</div>';
+}
+function cartBox(btn){
+ const r=rest(S.rest),s=sub(),k=Object.keys(S.cart);
+ return `<div class="card"><h3 style="margin-bottom:8px">سلة الطلب</h3>`+(k.length?k.map(i=>`<div class="row"><span>${n(S.cart[i])} × ${r.m[i][0]}</span><span>${egp(S.cart[i]*r.m[i][2])}</span></div>`).join('')+`<div class="row"><span>المجموع</span><span>${egp(s)}</span></div><div class="row"><span>التوصيل</span><span>${fee()?egp(fee()):'مجاني'}</span></div><div class="row t"><span>الإجمالي</span><span>${egp(s+fee())}</span></div>${btn?`<button class="btn o w" style="margin-top:12px" data-act="co">كمّل الطلب</button>`:''}`:'<div class="empty">السلة فاضية. ضيف صنف.</div>')+`</div>`;
+}
+function cust(){
+ if(S.last)return track();
+ if(S.co)return checkout();
+ if(!S.rest)return `<div class="hero"><h1>جعان؟ الأكل واصل في 30 دقيقة</h1><p>مطاعم منطقتك في مكان واحد، وبتدفع كاش عند الاستلام.</p><input class="search" id="q" type="search" placeholder="دوّر على مطعم أو نوع أكل" value="${S.q}" aria-label="بحث"></div>
+ <div class="chips" id="chips">${CATS.map(c=>`<button data-cat="${c}" aria-pressed="${c===S.cat}">${c}</button>`).join('')}</div><div class="grid" id="grid">${grid()}</div>`;
+ const r=rest(S.rest);
+ return `<button class="btn l" data-act="back" style="margin-bottom:12px">الرجوع للمطاعم</button><div class="split"><div><div class="card" style="padding:0;overflow:hidden"><div class="ban" style="background:${r.bg};height:90px">${r.e}</div><div style="padding:12px 16px"><h2>${r.n}</h2><div class="meta"><span class="rate">★ ${n(r.r)}</span> · ${r.c} · ${n(r.t)} دقيقة · توصيل ${egp(r.fee)}</div></div></div>
+ <div class="items">${r.m.map((x,i)=>`<div class="card it"><div class="e">${x[3]}</div><div><b>${x[0]}</b><p>${x[1]}</p><b>${egp(x[2])}</b></div><div class="q">${S.cart[i]?`<button data-dec="${i}" aria-label="تقليل">−</button><b>${n(S.cart[i])}</b>`:''}<button class="add" data-inc="${i}" aria-label="زيادة ${x[0]}">+</button></div></div>`).join('')}</div></div><aside>${cartBox(true)}</aside></div>`;
+}
+function checkout(){
+ const r=rest(S.rest),s=sub(),d=disc(),t=s+fee()-d,f=S.f;
+ return `<button class="btn l" data-act="edit" style="margin-bottom:12px">الرجوع للمنيو</button><div class="split"><div class="card"><h2>بيانات التوصيل</h2><label for="nm">الاسم</label><input type="text" id="nm" data-f="nm" value="${f.nm}"><label for="ph">الموبايل</label><input type="text" id="ph" data-f="ph" value="${f.ph}"><label for="ad">العنوان</label><input type="text" id="ad" data-f="ad" value="${f.ad}">
+ <h3>طريقة الدفع</h3><div class="pay"><label><input type="radio" name="pay" value="cash" ${S.pay==='cash'?'checked':''}> كاش عند الاستلام</label><label><input type="radio" name="pay" value="card" ${S.pay==='card'?'checked':''}> كارت (تجريبي)</label></div></div>
+ <aside style="display:block;position:static"><div class="card"><h3 style="margin-bottom:8px">ملخص من ${r.n}</h3>${Object.entries(S.cart).map(([k,q])=>`<div class="row"><span>${n(q)} × ${r.m[k][0]}</span><span>${egp(q*r.m[k][2])}</span></div>`).join('')}
+ <div class="row"><span>التوصيل</span><span>${fee()?egp(fee()):'مجاني'}</span></div>${d?`<div class="row ok"><span>كود WELCOME</span><span>− ${egp(d)}</span></div>`:''}<div class="row t"><span>الإجمالي</span><span>${egp(t)}</span></div>
+ ${S.promo?'':`<div style="display:flex;gap:8px;margin-top:10px"><input type="text" id="pc" placeholder="كود خصم: جرّب WELCOME" style="margin:0"><button class="btn l" data-act="promo">طبّق</button></div>`}
+ <button class="btn o w" style="margin-top:12px" data-act="place">تأكيد الأوردر · ${egp(t)}</button></div></aside></div>`;
+}
+function track(){
+ const o=S.orders.find(x=>x.id===S.last),r=rest(o.r),p=[0,0,.55,1][o.s];
+ return `<div class="split"><div class="card"><h2>${o.s===3?'الأكل وصل. بالهنا والشفا 🎉':'أوردرك '+ST[o.s]}</h2><p class="meta">أوردر رقم ${n(o.id)} من ${r.n}${o.s<3?' · الوصول المتوقع '+n(Math.max(5,(3-o.s)*8))+' دقيقة':''}</p>
+ <div class="map"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="14" y1="78" x2="86" y2="24" stroke="var(--g)" stroke-width="1.2" stroke-dasharray="3 2" vector-effect="non-scaling-stroke"/></svg><span class="pin" style="left:14%;top:78%">${r.e}</span><span class="pin" style="left:86%;top:24%">🏠</span><span class="sc" style="left:${14+72*(S.pp||0)}%;top:${78-54*(S.pp||0)}%" data-l="${14+72*p}" data-t="${78-54*p}" data-p="${p}">🛵</span></div>
+ <div class="trk">${ST.map((x,i)=>`<div class="${i<=o.s?'d':''}"><i></i>${x}</div>`).join('')}</div>
+ ${o.s>=2?'<div class="row"><span>المندوب</span><b>محمد علي · ⭐ 4.9</b></div>':''}<p class="meta">افتح تبويب "المطعم" لتحريك الأوردر بإيدك، أو سيبه يتحرك لوحده.</p>
+ <button class="btn" data-act="new" style="margin-top:8px">اطلب أوردر جديد</button></div>
+ <aside style="display:block;position:static"><div class="card"><h3 style="margin-bottom:8px">تفاصيل الأوردر</h3>${o.lines.map(l=>`<div class="row"><span>${l}</span></div>`).join('')}${o.disc?`<div class="row ok"><span>خصم</span><span>− ${egp(o.disc)}</span></div>`:''}<div class="row t"><span>الإجمالي</span><span>${egp(o.total)}</span></div><p class="meta">${o.pay==='card'?'مدفوع بالكارت (تجريبي)':'كاش عند الاستلام'}</p></div></aside></div>`;
+}
+function restView(){
+ const os=S.orders.filter(o=>o.r===S.rv&&!o.old),cols=[['جديد',0,'موافقة وبدء التحضير'],['بيتحضّر',1,'جاهز: ابعت مندوب'],['في الطريق',2,'تم التسليم']];
+ return `<h2>لوحة المطعم</h2><label class="meta" for="rs">المطعم</label><select id="rs">${R.map(r=>`<option value="${r.id}" ${r.id===S.rv?'selected':''}>${r.e} ${r.n}</option>`).join('')}</select>
+ <div class="kan">${cols.map(c=>{const l=os.filter(o=>o.s===c[1]);return `<div class="col"><h3>${c[0]} <span class="badge">${n(l.length)}</span></h3>${l.length?l.map(o=>`<div class="card"><div class="row"><b>أوردر ${n(o.id)}</b><b>${egp(o.sub)}</b></div><div class="meta">${o.lines.join('، ')}<br>${o.name} · ${o.addr}</div><button class="btn w" style="margin-top:8px;padding:6px" data-adv="${o.id}">${c[2]}</button></div>`).join(''):'<div class="empty meta">مفيش أوردرات</div>'}</div>`}).join('')}</div>
+ <p class="meta" style="margin-top:14px">أوردرات مكتملة اليوم: ${n(os.filter(o=>o.s===3).length)}. اطلب من تبويب العميل من نفس المطعم وشوف الأوردر هنا.</p>`;
+}
+function adminView(){
+ const a=S.orders,gmv=a.reduce((s,o)=>s+o.sub,0),rev=a.reduce((s,o)=>s+o.sub*COM+o.fee-o.disc,0),by=R.map(r=>[r,a.filter(o=>o.r===r.id).reduce((s,o)=>s+o.sub,0)]),mx=Math.max(...by.map(x=>x[1]),1);
+ return `<h2>لوحة الأدمن</h2><p class="meta">بيانات اليوم. العمولة ${n(COM*100)}% من المطعم مضافاً لها رسوم التوصيل ومخصوماً منها الخصومات.</p>
+ <div class="kpi"><div class="card"><span class="meta">الأوردرات</span><strong>${n(a.length)}</strong></div><div class="card"><span class="meta">المبيعات</span><strong>${egp(gmv)}</strong></div><div class="card"><span class="meta">إيراد المنصة</span><strong>${egp(rev)}</strong></div><div class="card"><span class="meta">متوسط الأوردر</span><strong>${egp(gmv/a.length)}</strong></div></div>
+ <div class="split" style="grid-template-columns:1fr"><div class="card"><h3 style="margin-bottom:10px">المبيعات حسب المطعم</h3><div class="bars">${by.map(x=>`<div><span>${x[0].e} ${x[0].n}</span><i style="width:${x[1]/mx*100}%"></i><b>${egp(x[1])}</b></div>`).join('')}</div></div>
+ <div class="card" style="overflow-x:auto"><h3 style="margin-bottom:6px">آخر الأوردرات</h3><table><tr><th>رقم</th><th>المطعم</th><th>العميل</th><th>القيمة</th><th>الحالة</th></tr>${[...a].reverse().slice(0,8).map(o=>`<tr><td>${n(o.id)}</td><td>${rest(o.r).n}</td><td>${o.name}</td><td>${egp(o.total)}</td><td><span class="badge">${ST[o.s]}</span></td></tr>`).join('')}</table></div></div>`;
+}
+function bar(){
+ const b=$('#cb');
+ if(S.v==='c'&&S.rest&&!S.co&&!S.last&&cnt()){b.hidden=false;b.firstElementChild.innerHTML=`<span><b>${n(cnt())}</b> أصناف · ${egp(sub())}</span><button class="btn o" data-act="co">كمّل الطلب</button>`}else b.hidden=true;
+}
+function render(){
+ $('#app').innerHTML=S.v==='c'?cust():S.v==='r'?restView():adminView();
+ document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.v===S.v));
+ bar();mv();window.scrollTo(0,0);
+}
+function soft(){ // refresh pieces without scroll jump
+ const y=scrollY;$('#app').innerHTML=S.v==='c'?cust():S.v==='r'?restView():adminView();bar();mv();scrollTo(0,y);
+}
+document.addEventListener('click',e=>{
+ const t=e.target.closest('button');if(!t)return;const d=t.dataset;
+ if(d.cat){S.cat=d.cat;$('#grid').innerHTML=grid();document.querySelectorAll('#chips button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cat===S.cat));return}
+ if(d.inc!==undefined||d.dec!==undefined){
+  if(d.inc!==undefined)S.cart[d.inc]=(S.cart[d.inc]||0)+1;else{S.cart[d.dec]--;if(!S.cart[d.dec])delete S.cart[d.dec]}
+  return soft()}
+ if(d.adv){const o=S.orders.find(x=>x.id==d.adv);if(o.s<3){o.s++;o.t=Date.now()}return soft()}
+ if(d.act==='promo'){if($('#pc').value.trim().toUpperCase()==='WELCOME')S.promo=1;else{$('#pc').value='';$('#pc').placeholder='الكود غير صحيح'}return soft()}
+ if(d.v){S.v=d.v}
+ else if(d.rest){S.rest=+d.rest;S.rv=+d.rest;S.cart={}}
+ else if(d.act==='back'){S.rest=null;S.cart={}}
+ else if(d.act==='co')S.co=true;
+ else if(d.act==='edit')S.co=false;
+ else if(d.act==='new'){S.last=null;S.rest=null;S.cart={};S.co=false;S.promo=0}
+ else if(d.act==='place'){
+  const r=rest(S.rest),s=sub(),dc=disc(),f=fee(),id=++S.seq;
+  S.orders.push({id,r:r.id,sub:s,fee:f,disc:dc,total:s+f-dc,s:0,name:S.f.nm||'عميل',addr:S.f.ad,pay:S.pay,t:Date.now(),
+   lines:Object.entries(S.cart).map(([k,q])=>n(q)+' × '+r.m[k][0])});
+  S.last=id;S.pp=0;S.co=false;S.cart={};S.promo=0}
+ else return;
+ render();
+});
+document.addEventListener('input',e=>{
+ const t=e.target;
+ if(t.id==='q'){S.q=t.value;$('#grid').innerHTML=grid()}
+ else if(t.dataset.f)S.f[t.dataset.f]=t.value;
+});
+document.addEventListener('change',e=>{
+ if(e.target.id==='rs'){S.rv=+e.target.value;soft()}
+ else if(e.target.name==='pay')S.pay=e.target.value;
+});
+setInterval(()=>{if(S.auto)return;let c=0;S.orders.forEach(o=>{if(o.s<3&&Date.now()-o.t>8000){o.s++;o.t=Date.now();c++}});
+ if(c&&(S.v!=='c'||S.last)&&!document.activeElement.matches('input,select'))soft()},2000);
+function mv(){const e=document.querySelector('.sc');if(!e)return;requestAnimationFrame(()=>requestAnimationFrame(()=>{e.style.left=e.dataset.l+'%';e.style.top=e.dataset.t+'%';S.pp=+e.dataset.p}))}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms)),clk=s=>{const e=document.querySelector(s);if(e)e.click()},cap=t=>{const c=$('#cap');c.textContent=t;c.hidden=!t};
+async function auto(){
+ if(S.auto)return;S.auto=1;$('#play').hidden=true;
+ Object.assign(S,{v:'c',rest:null,cart:{},co:false,last:null,promo:0,cat:'الكل',q:'',pp:0});render();
+ cap('العميل بيفتح الموقع وبيشوف مطاعم منطقته');await sleep(3500);
+ cap('بيختار بيتزا نابولي');clk('[data-rest="3"]');await sleep(2500);
+ cap('بيضيف أصناف للسلة');clk('[data-inc="0"]');await sleep(1200);clk('[data-inc="0"]');await sleep(1200);clk('[data-inc="3"]');await sleep(2200);
+ cap('بيكمّل الطلب ويراجع بيانات التوصيل');clk('[data-act="co"]');await sleep(3200);
+ cap('بيستخدم كود خصم، والتوصيل بقى مجاني فوق 150 جنيه');const pc=$('#pc');if(pc){pc.value='WELCOME';clk('[data-act="promo"]')}await sleep(3500);
+ cap('وبيأكد الأوردر');clk('[data-act="place"]');await sleep(3500);
+ cap('العميل بيتابع أوردره: تم الاستلام');await sleep(3000);
+ cap('المطعم بيستلم الأوردر على لوحته');clk('[data-v="r"]');await sleep(3500);
+ cap('المطعم بيوافق ويبدأ التحضير');clk('[data-adv]');await sleep(3500);
+ cap('الأكل جاهز والمنصة بتبعت مندوب');clk('[data-adv]');await sleep(3000);
+ cap('العميل بيشوف المندوب في الطريق');clk('[data-v="c"]');await sleep(6000);
+ cap('المطعم بيأكد التسليم');clk('[data-v="r"]');await sleep(2500);clk('[data-adv]');await sleep(2000);
+ cap('الأكل وصل للعميل');clk('[data-v="c"]');await sleep(5000);
+ cap('والأدمن بيشوف المبيعات وإيراد المنصة لحظة بلحظة');clk('[data-v="a"]');await sleep(8000);
+ cap('');S.auto=0;$('#play').hidden=false}
+$('#play').addEventListener('click',auto);
+render();
+</script>
+</body>
+</html>
